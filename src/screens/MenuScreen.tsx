@@ -12,24 +12,24 @@ export function MenuScreen({ onNavigate, onSettings, onSpeak, onHome }: MenuScre
   return (
     <>
       <TopBar showBrand onSpeak={onSpeak} onSettings={onSettings} onHome={onHome} />
-      <div className="screen-body" style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'center' }}>
-        <div style={{ textAlign: 'center', marginBottom: '8px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text)', marginBottom: '6px' }}>어떤 서비스를 이용할까요?</h2>
-          <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>시선 또는 터치로 메뉴를 선택해 주세요.</p>
+      <div className="screen-body" style={{ padding: '20px 16px', display: 'flex', flexDirection: 'column', gap: '14px', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4px' }}>
+          <h2 style={{ fontSize: '26px', fontWeight: 800, color: 'var(--text)', marginBottom: '8px' }}>어떤 서비스를 이용할까요?</h2>
+          <p style={{ fontSize: '17px', color: 'var(--text-secondary)' }}>시선 또는 터치로 메뉴를 선택해 주세요.</p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1, justifyContent: 'stretch' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', flex: 1, justifyContent: 'stretch' }}>
           {/* 자유롭게 말하기 */}
           <button
             onClick={() => onNavigate('keyboard_speak')}
             className="menu-hub-card"
           >
-            <div className="icon-wrapper" style={{ background: 'var(--primary-light)', color: 'var(--primary)' }}>
-              <IconKeyboard size={32} />
+            <div className="icon-wrapper" style={{ background: 'var(--primary-light)', color: 'var(--primary)', width: 72, height: 72, borderRadius: 20 }}>
+              <IconKeyboard size={36} />
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text)' }}>자유롭게 말하기</div>
-              <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginTop: '6px' }}>키보드로 직접 입력해서 말하기</div>
+              <div style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text)', marginBottom: 6 }}>자유롭게 말하기</div>
+              <div style={{ fontSize: '17px', color: 'var(--text-secondary)' }}>키보드로 직접 입력해서 말하기</div>
             </div>
           </button>
 
@@ -38,12 +38,12 @@ export function MenuScreen({ onNavigate, onSettings, onSpeak, onHome }: MenuScre
             onClick={() => onNavigate('main')}
             className="menu-hub-card"
           >
-            <div className="icon-wrapper" style={{ background: 'var(--thanks-bg)', color: 'var(--thanks-fg)' }}>
-              <IconVoice size={32} />
+            <div className="icon-wrapper" style={{ background: 'var(--thanks-bg)', color: 'var(--thanks-fg)', width: 72, height: 72, borderRadius: 20 }}>
+              <IconVoice size={36} />
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text)' }}>자주쓰는 표현</div>
-              <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginTop: '6px' }}>상황별 자주 사용하는 단어 및 카드</div>
+              <div style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text)', marginBottom: 6 }}>자주쓰는 표현</div>
+              <div style={{ fontSize: '17px', color: 'var(--text-secondary)' }}>상황별 자주 사용하는 단어 및 카드</div>
             </div>
           </button>
 
@@ -52,12 +52,12 @@ export function MenuScreen({ onNavigate, onSettings, onSpeak, onHome }: MenuScre
             onClick={() => onNavigate('links')}
             className="menu-hub-card"
           >
-            <div className="icon-wrapper" style={{ background: 'var(--warm-bg)', color: 'var(--warm-fg)' }}>
-              <IconLink size={32} />
+            <div className="icon-wrapper" style={{ background: 'var(--warm-bg)', color: 'var(--warm-fg)', width: 72, height: 72, borderRadius: 20 }}>
+              <IconLink size={36} />
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text)' }}>유용한 사이트</div>
-              <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginTop: '6px' }}>인터넷 포털 및 동영상 사이트 바로가기</div>
+              <div style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text)', marginBottom: 6 }}>유용한 사이트</div>
+              <div style={{ fontSize: '17px', color: 'var(--text-secondary)' }}>인터넷 포털 및 동영상 사이트 바로가기</div>
             </div>
           </button>
         </div>

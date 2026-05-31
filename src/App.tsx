@@ -25,12 +25,6 @@ type Screen =
   | SubScreen
   | { id: 'settings' };
 
-const FONT_SIZE_MAP: Record<string, string> = {
-  md: '15px',
-  lg: '18px',
-  xl: '21px',
-};
-
 export default function App() {
   const { settings, update } = useSettings();
 
@@ -65,7 +59,7 @@ export default function App() {
   const current = stack[stack.length - 1];
 
   const shellStyle = {
-    '--card-font-base': FONT_SIZE_MAP[settings.fontSize],
+    '--card-font-base': '21px',
   } as CSSProperties;
 
   return (

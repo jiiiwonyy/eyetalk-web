@@ -166,7 +166,7 @@ export function KeyboardSpeakScreen({ onSpeak, onBack, onHome, onSettings }: Key
                 border: '2px solid var(--border)',
                 background: 'var(--surface)',
                 color: 'var(--text-secondary)',
-                fontSize: '15px',
+                fontSize: '18px',
                 fontWeight: '700',
                 cursor: 'pointer',
               }}
@@ -181,7 +181,7 @@ export function KeyboardSpeakScreen({ onSpeak, onBack, onHome, onSettings }: Key
                 border: 'none',
                 background: 'var(--primary)',
                 color: '#fff',
-                fontSize: '15px',
+                fontSize: '18px',
                 fontWeight: '700',
                 cursor: 'pointer',
                 display: 'flex',

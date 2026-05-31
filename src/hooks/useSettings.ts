@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 
 export interface Settings {
-  fontSize: 'md' | 'lg' | 'xl';
   rate: number;
 }
 
-const DEFAULT: Settings = { fontSize: 'md', rate: 0.9 };
+const DEFAULT: Settings = { rate: 0.9 };
 const KEY = '@italk_settings';
 
 export function useSettings() {

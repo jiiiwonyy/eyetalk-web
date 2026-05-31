@@ -39,7 +39,7 @@ const NUM_ROWS = [
 ];
 
 const AUTOCOMPLETE_WORDS = [
-  "안녕하세요", "감사합니다", "죄송합니다", "네", "아니요", 
+  "안녕하세요", "감사합니다", "죄송합니다", "네", "아니요",
   "아파요", "머리가 아파요", "목이 아파요", "어깨가 아파요", "배가 아파요", "팔이 아파요", "다리가 아파요",
   "전혀 안 아파요", "조금 아파요", "많이 아파요", "매우 심해요",
   "가래 빼주세요", "물 주세요", "담요 주세요", "화장실 가고 싶어요", "전화 해주세요", "가족 불러주세요", "약 주세요",
@@ -61,7 +61,6 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
 
   const textValue = Hangul.assemble(jasos);
 
-  // Auto scroll textarea to bottom when textValue changes
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.scrollTop = textareaRef.current.scrollHeight;
@@ -71,7 +70,7 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
   const handleKeyPress = (key: string) => {
     setJasos(prev => [...prev, key]);
     if (isShiftActive) {
-      setIsShiftActive(false); // Reset shift after typing one letter
+      setIsShiftActive(false);
     }
   };
 
@@ -129,8 +128,9 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
               <IconEye size={18} color="var(--primary)" />
             </div>
             <div>
-              <div className="brand-name">eye<em>talk</em></div>
-              <div className="brand-sub">AAC</div>
+              <div className="brand-name">
+                eye<em>talk</em>
+              </div>
             </div>
           </div>
         ) : (
@@ -166,15 +166,15 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
           <div className="modal" onClick={e => e.stopPropagation()}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', marginBottom: '4px' }}>
               <div className="modal-title">자유롭게 표현하기</div>
-              <button 
-                className="btn-cancel" 
+              <button
+                className="btn-cancel"
                 onClick={() => { setShowModal(false); setJasos([]); }}
                 style={{ fontSize: '14px', fontWeight: 700, padding: '4px 8px' }}
               >
                 닫기
               </button>
             </div>
-            
+
             <textarea
               ref={textareaRef}
               readOnly
@@ -198,7 +198,6 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
               }}
             />
 
-            {/* 자동완성 제안 바 */}
             <div className="suggestions-bar">
               {getSuggestions().map((suggestion, idx) => (
                 <button
@@ -211,10 +210,7 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
               ))}
             </div>
 
-            {/* 가상 키보드 영역 */}
             <div className="virtual-keyboard-inline">
-              
-              {/* 키보드 레이아웃 탭 */}
               <div className="keyboard-tabs">
                 <button
                   className={`kbd-tab-btn ${layout === 'ko' ? 'active' : ''}`}
@@ -236,10 +232,8 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
                 </button>
               </div>
 
-              {/* 문자 키 행 */}
               {activeRows().map((row, rowIdx) => (
                 <div key={rowIdx} className="keyboard-row">
-                  {/* 한글 레이아웃의 3번째 행 왼쪽에 Shift 키 추가 */}
                   {layout === 'ko' && rowIdx === 2 && (
                     <button
                       className={`key-btn special-key ${isShiftActive ? 'active-shift' : ''}`}
@@ -249,7 +243,6 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
                       Shift
                     </button>
                   )}
-
                   {row.map(char => (
                     <button
                       key={char}
@@ -260,8 +253,6 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
                       {char}
                     </button>
                   ))}
-
-                  {/* 모든 레이아웃의 3번째 행 오른쪽에 Backspace 키 추가 */}
                   {rowIdx === 2 && (
                     <button
                       className="key-btn special-key"
@@ -274,7 +265,6 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
                 </div>
               ))}
 
-              {/* 마지막 스페이스바 및 기능 키 행 */}
               <div className="keyboard-row" style={{ gap: '6px' }}>
                 <button
                   className="key-btn special-key"
@@ -283,7 +273,6 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
                 >
                   전체지움
                 </button>
-                
                 <button
                   className="key-btn special-key space-key"
                   style={{ flex: 4, height: '42px', fontSize: '14px' }}
@@ -291,7 +280,6 @@ export function TopBar({ showBrand, title, onBack, onSettings, onSpeak, onHome }
                 >
                   띄어쓰기
                 </button>
-
                 <button
                   className="key-btn"
                   style={{

@@ -1,12 +1,6 @@
 import { TopBar } from '../components/TopBar';
-import { IconSettings, IconVoice } from '../components/Icons';
+import { IconVoice } from '../components/Icons';
 import type { Settings } from '../hooks/useSettings';
-
-const FONT_LABELS: Record<Settings['fontSize'], string> = {
-  md: '보통',
-  lg: '크게',
-  xl: '매우 크게',
-};
 
 const RATE_OPTIONS: { value: number; label: string }[] = [
   { value: 0.7, label: '느리게' },
@@ -29,25 +23,6 @@ export function SettingsScreen({ settings, onUpdate, onBack, onSpeak, onHome, on
       <TopBar title="설정" onBack={onBack} onSpeak={onSpeak} onHome={onHome} onSettings={onSettings} />
       <div className="screen-body" style={{ overflowY: 'auto' }}>
         <div className="settings-list">
-          <div className="settings-row">
-            <div className="settings-row-top">
-              <IconSettings size={18} color="var(--text-secondary)" />
-              <span className="settings-row-label">글자 크기</span>
-              <span className="settings-row-current">{FONT_LABELS[settings.fontSize]}</span>
-            </div>
-            <div className="settings-chips">
-              {(['md', 'lg', 'xl'] as const).map(s => (
-                <button
-                  key={s}
-                  className={`chip${settings.fontSize === s ? ' active' : ''}`}
-                  onClick={() => onUpdate({ fontSize: s })}
-                >
-                  {FONT_LABELS[s]}
-                </button>
-              ))}
-            </div>
-          </div>
-
           <div className="settings-row">
             <div className="settings-row-top">
               <IconVoice size={18} color="var(--text-secondary)" />
