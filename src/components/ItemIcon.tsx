@@ -14,7 +14,6 @@ import FamilyIcon from '../assets/images/family.svg?react';
 import HeadIcon from '../assets/images/head.svg?react';
 import HeartIcon from '../assets/images/heart.svg?react';
 import HelloIcon from '../assets/images/hello.svg?react';
-import Image11Icon from '../assets/images/image 11.svg?react';
 import LegIcon from '../assets/images/leg.svg?react';
 import LonelyIcon from '../assets/images/lonely.svg?react';
 import MedicineIcon from '../assets/images/medicine.svg?react';
@@ -91,7 +90,7 @@ const IMAGE_MAP: Record<string, SvgComp> = {
   // 요청 항목
   lung: MicIcon,
   home: BedIcon,
-  hand: Image11Icon,
+  hand: BellIcon,
   water: WaterIcon,
   blanket: BlanketIcon,
   toilet: ToiletIcon,
