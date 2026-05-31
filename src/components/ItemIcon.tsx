@@ -19,6 +19,7 @@ import LegIcon from '../assets/images/leg.svg?react';
 import LonelyIcon from '../assets/images/lonely.svg?react';
 import MedicineIcon from '../assets/images/medicine.svg?react';
 import MicIcon from '../assets/images/mic.svg?react';
+import NopainIcon from '../assets/images/nopain.svg?react';
 import MildIcon from '../assets/images/mild.svg?react';
 import ModerateIcon from '../assets/images/moderate.svg?react';
 import ReIcon from '../assets/images/re.svg?react';
@@ -48,7 +49,7 @@ const IMAGE_MAP: Record<string, SvgComp> = {
   stomach: StomachIcon,
 
   // 통증 단계
-  pain_0: CheckIcon,
+  pain_0: NopainIcon,
   pain_3: MildIcon,
   pain_5: ModerateIcon,
   pain_7: SevereIcon,
