@@ -1,109 +1,105 @@
-import armImg from '../assets/images/arm.svg';
-import backImg from '../assets/images/back.svg';
-import bedImg from '../assets/images/bed.svg';
-import bellImg from '../assets/images/bell.svg';
-import blanketImg from '../assets/images/blanket.svg';
-import boredImg from '../assets/images/bored.svg';
-import byeImg from '../assets/images/bye.svg';
-import callImg from '../assets/images/call.svg';
-import checkImg from '../assets/images/check.svg';
-import clockImg from '../assets/images/clock.svg';
-import curtenImg from '../assets/images/curten.svg';
-import extremeImg from '../assets/images/extreme.svg';
-import familyImg from '../assets/images/family.svg';
-import headImg from '../assets/images/head.svg';
-import heartImg from '../assets/images/heart.svg';
-import helloImg from '../assets/images/hello.svg';
-import image11Img from '../assets/images/image 11.svg';
-import legImg from '../assets/images/leg.svg';
-import lonelyImg from '../assets/images/lonely.svg';
-import medicineImg from '../assets/images/medicine.svg';
-import micImg from '../assets/images/mic.svg';
-import mildImg from '../assets/images/mild.svg';
-import moderateImg from '../assets/images/moderate.svg';
-import reImg from '../assets/images/re.svg';
-import scaredImg from '../assets/images/scared.svg';
-import severeImg from '../assets/images/severe.svg';
-import shoulderImg from '../assets/images/shoulder.svg';
-import sorryImg from '../assets/images/sorry.svg';
-import stomachImg from '../assets/images/stomach.svg';
-import temperatureImg from '../assets/images/temperature.svg';
-import thankyouImg from '../assets/images/thankyou.svg';
-import tiredImg from '../assets/images/tired.svg';
-import toiletImg from '../assets/images/toilet.svg';
-import tvImg from '../assets/images/tv.svg';
-import waterImg from '../assets/images/water.svg';
+import ArmIcon from '../assets/images/arm.svg?react';
+import BackIcon from '../assets/images/back.svg?react';
+import BedIcon from '../assets/images/bed.svg?react';
+import BellIcon from '../assets/images/bell.svg?react';
+import BlanketIcon from '../assets/images/blanket.svg?react';
+import BoredIcon from '../assets/images/bored.svg?react';
+import ByeIcon from '../assets/images/bye.svg?react';
+import CallIcon from '../assets/images/call.svg?react';
+import CheckIcon from '../assets/images/check.svg?react';
+import ClockIcon from '../assets/images/clock.svg?react';
+import CurtenIcon from '../assets/images/curten.svg?react';
+import ExtremeIcon from '../assets/images/extreme.svg?react';
+import FamilyIcon from '../assets/images/family.svg?react';
+import HeadIcon from '../assets/images/head.svg?react';
+import HeartIcon from '../assets/images/heart.svg?react';
+import HelloIcon from '../assets/images/hello.svg?react';
+import Image11Icon from '../assets/images/image 11.svg?react';
+import LegIcon from '../assets/images/leg.svg?react';
+import LonelyIcon from '../assets/images/lonely.svg?react';
+import MedicineIcon from '../assets/images/medicine.svg?react';
+import MicIcon from '../assets/images/mic.svg?react';
+import MildIcon from '../assets/images/mild.svg?react';
+import ModerateIcon from '../assets/images/moderate.svg?react';
+import ReIcon from '../assets/images/re.svg?react';
+import ScaredIcon from '../assets/images/scared.svg?react';
+import SevereIcon from '../assets/images/severe.svg?react';
+import ShoulderIcon from '../assets/images/shoulder.svg?react';
+import SorryIcon from '../assets/images/sorry.svg?react';
+import StomachIcon from '../assets/images/stomach.svg?react';
+import TemperatureIcon from '../assets/images/temperature.svg?react';
+import ThankyouIcon from '../assets/images/thankyou.svg?react';
+import TiredIcon from '../assets/images/tired.svg?react';
+import ToiletIcon from '../assets/images/toilet.svg?react';
+import TvIcon from '../assets/images/tv.svg?react';
+import WaterIcon from '../assets/images/water.svg?react';
 
-const IMAGE_MAP: Record<string, string> = {
+import type { SVGProps, ComponentType } from 'react';
+
+type SvgComp = ComponentType<SVGProps<SVGSVGElement>>;
+
+const IMAGE_MAP: Record<string, SvgComp> = {
   // 신체 부위
-  arm: armImg,
-  back: backImg,
-  head: headImg,
-  leg: legImg,
-  shoulder: shoulderImg,
-  stomach: stomachImg,
+  arm: ArmIcon,
+  back: BackIcon,
+  head: HeadIcon,
+  leg: LegIcon,
+  shoulder: ShoulderIcon,
+  stomach: StomachIcon,
 
   // 통증 단계
-  pain_0: checkImg,
-  pain_3: mildImg,
-  pain_5: moderateImg,
-  pain_7: severeImg,
-  pain_10: extremeImg,
+  pain_0: CheckIcon,
+  pain_3: MildIcon,
+  pain_5: ModerateIcon,
+  pain_7: SevereIcon,
+  pain_10: ExtremeIcon,
 
   // 환경
-  bed: bedImg,
-  curtain: curtenImg,
-  thermo: temperatureImg,
-  tv: tvImg,
+  bed: BedIcon,
+  curtain: CurtenIcon,
+  thermo: TemperatureIcon,
+  tv: TvIcon,
 
   // 인사/감사
-  bye: byeImg,
-  hello: helloImg,
-  sorry: sorryImg,
-  thanks: thankyouImg,
-  wave: helloImg,
+  bye: ByeIcon,
+  hello: HelloIcon,
+  sorry: SorryIcon,
+  thanks: ThankyouIcon,
+  wave: HelloIcon,
 
   // 감정
-  good: heartImg,
-  heart: heartImg,
-  bad: tiredImg,
-  scared: scaredImg,
-  lonely: lonelyImg,
-  bored: boredImg,
+  good: HeartIcon,
+  heart: HeartIcon,
+  bad: TiredIcon,
+  scared: ScaredIcon,
+  lonely: LonelyIcon,
+  bored: BoredIcon,
 
   // 행동/요청
-  bell: bellImg,
-  check: checkImg,
-  yes: checkImg,
-  no: reImg,
-  voice: micImg,
-  talk: micImg,
+  bell: BellIcon,
+  check: CheckIcon,
+  yes: CheckIcon,
+  no: ReIcon,
+  voice: MicIcon,
+  talk: MicIcon,
 
   // 카테고리 아이콘
-  pain: extremeImg,
-  wait: clockImg,
+  pain: ExtremeIcon,
+  wait: ClockIcon,
 
   // 요청 항목
-  lung: micImg,
-  home: bedImg,
-  hand: image11Img,
-  water: waterImg,
-  blanket: blanketImg,
-  toilet: toiletImg,
-  phone: callImg,
-  family: familyImg,
-  medicine: medicineImg,
+  lung: MicIcon,
+  home: BedIcon,
+  hand: Image11Icon,
+  water: WaterIcon,
+  blanket: BlanketIcon,
+  toilet: ToiletIcon,
+  phone: CallIcon,
+  family: FamilyIcon,
+  medicine: MedicineIcon,
 };
 
 export function ItemIcon({ icon, size = 26 }: { icon: string; size?: number; color?: string }) {
-  const src = IMAGE_MAP[icon] ?? heartImg;
-  return (
-    <img
-      src={src}
-      alt={icon}
-      width={size}
-      height={size}
-      style={{ objectFit: 'contain', display: 'block' }}
-    />
-  );
+  const Icon = IMAGE_MAP[icon] ?? HeartIcon;
+  return <Icon width={size} height={size} style={{ display: 'block', flexShrink: 0 }} />;
 }
