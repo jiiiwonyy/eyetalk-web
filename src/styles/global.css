@@ -137,7 +137,7 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
   gap: 8px;
   padding: 12px 8px;
   border-radius: 16px;
-  border: 2px solid var(--border);
+  border: 2px solid #6B9EC0;
   background: var(--surface);
   cursor: pointer;
   text-align: center;
@@ -151,18 +151,16 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
 .item-card .card-title { font-size: var(--card-font-base, 20px); font-weight: 700; color: var(--text); line-height: 1.2; }
 .item-card .card-sub { font-size: calc(var(--card-font-base, 20px) * 0.70); color: var(--text-secondary); line-height: 1.3; }
 
-/* tone variants */
-.tone-pain  { background: var(--pain-bg);   border-color: var(--pain-border); }
+/* tone variants — 외곽선 파란색 계열 통일 */
+.tone-pain, .tone-warm, .tone-cool, .tone-call, .tone-thanks, .tone-wait {
+  background: #fff;
+  border-color: #6B9EC0;
+}
 .tone-pain  .card-title, .tone-pain  .card-sub { color: var(--pain-fg); }
-.tone-warm  { background: var(--warm-bg);   border-color: var(--warm-border); }
 .tone-warm  .card-title, .tone-warm  .card-sub { color: var(--warm-fg); }
-.tone-cool  { background: var(--cool-bg);   border-color: var(--cool-border); }
 .tone-cool  .card-title, .tone-cool  .card-sub { color: var(--cool-fg); }
-.tone-call  { background: var(--call-bg);   border-color: var(--call-border); }
 .tone-call  .card-title, .tone-call  .card-sub { color: var(--call-fg); }
-.tone-thanks{ background: var(--thanks-bg); border-color: var(--thanks-border);}
 .tone-thanks .card-title, .tone-thanks .card-sub { color: var(--thanks-fg); }
-.tone-wait  { background: var(--wait-bg);   border-color: var(--wait-border); }
 .tone-wait  .card-title, .tone-wait  .card-sub { color: var(--wait-fg); }
 
 /* ── 하단 바 ── */
@@ -196,10 +194,10 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
   transition: opacity .1s;
 }
 .quick-pill:active { opacity: .7; }
-.quick-pill.tone-pain  { background: var(--pain-bg);   border-color: var(--pain-border);   color: var(--pain-fg); }
-.quick-pill.tone-call  { background: var(--call-bg);   border-color: var(--call-border);   color: var(--call-fg); }
-.quick-pill.tone-thanks{ background: var(--thanks-bg); border-color: var(--thanks-border); color: var(--thanks-fg); }
-.quick-pill.tone-wait  { background: var(--wait-bg);   border-color: var(--wait-border);   color: var(--wait-fg); }
+.quick-pill.tone-pain  { background: #fff; border-color: #6B9EC0; color: var(--pain-fg); }
+.quick-pill.tone-call  { background: #fff; border-color: #6B9EC0; color: var(--call-fg); }
+.quick-pill.tone-thanks{ background: #fff; border-color: #6B9EC0; color: var(--thanks-fg); }
+.quick-pill.tone-wait  { background: #fff; border-color: #6B9EC0; color: var(--wait-fg); }
 
 /* ── 배너 ── */
 .banner {
@@ -268,7 +266,6 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
 .chip:active { opacity: .7; }
 
 /* ── 모달 ── */
-<<<<<<< Updated upstream
 .modal-overlay {
   position: absolute;
   inset: 0;
@@ -291,7 +288,6 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
   box-shadow: 0 -8px 24px rgba(0,0,0,0.15);
   animation: slide-up-drawer 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   max-height: 95%;
-  margin-bottom: 0;
   box-sizing: border-box;
 }
 
@@ -300,8 +296,9 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
   to { transform: translateY(0); }
 }
 
-.modal-title { font-size: 16px; font-weight: 800; color: var(--text); }
-.btn-cancel { background: none; border: none; color: var(--text-secondary); cursor: pointer; }
+.modal-title { font-size: 20px; font-weight: 800; color: var(--text); }
+.btn-cancel { background: none; border: none; font-size: 18px; color: var(--text-secondary); cursor: pointer; }
+.btn-speak { background: var(--primary); border: none; border-radius: 10px; padding: 10px 24px; font-size: 18px; font-weight: 600; color: #fff; cursor: pointer; }
 
 /* ── 자동완성 제안 바 ── */
 .suggestions-bar {
@@ -310,19 +307,17 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
   overflow-x: auto;
   padding: 2px 0 6px 0;
   width: 100%;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
   flex-shrink: 0;
 }
-.suggestions-bar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
+.suggestions-bar::-webkit-scrollbar { display: none; }
 .suggestion-chip {
   background: var(--primary-light);
   color: var(--primary);
   border: 1.5px solid var(--border);
   padding: 6px 12px;
   border-radius: 9999px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
@@ -347,16 +342,6 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
   gap: 6px;
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
 }
-=======
-.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.4); display: flex; align-items: center; justify-content: center; padding: 24px; z-index: 100; }
-.modal { background: var(--surface); border-radius: 20px; padding: 24px; width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 16px; }
-.modal-title { font-size: 21px; font-weight: 700; color: var(--text); }
-.modal textarea { border: 1px solid var(--border); border-radius: 10px; padding: 14px; font-size: 19px; min-height: 80px; resize: none; font-family: inherit; color: var(--text); width: 100%; }
-.modal textarea:focus { outline: none; border-color: var(--primary); }
-.modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
-.btn-cancel { background: none; border: none; padding: 10px 16px; font-size: 18px; color: var(--text-secondary); cursor: pointer; }
-.btn-speak { background: var(--primary); border: none; border-radius: 10px; padding: 10px 24px; font-size: 18px; font-weight: 600; color: #fff; cursor: pointer; }
->>>>>>> Stashed changes
 
 /* ── 게임 / 링크 플레이스홀더 ── */
 .placeholder { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 19px; color: var(--text-secondary); }
