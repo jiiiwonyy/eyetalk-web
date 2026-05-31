@@ -9,7 +9,6 @@ import callImg from '../assets/images/call.svg';
 import checkImg from '../assets/images/check.svg';
 import clockImg from '../assets/images/clock.svg';
 import curtenImg from '../assets/images/curten.svg';
-import emptyheartImg from '../assets/images/emptyheart.svg';
 import extremeImg from '../assets/images/extreme.svg';
 import familyImg from '../assets/images/family.svg';
 import headImg from '../assets/images/head.svg';
